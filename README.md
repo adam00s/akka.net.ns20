@@ -10,7 +10,7 @@ Build it just as normal akka.net, but on master brunch (dev is not modified).
 .\build.ps1 Nuget
 ```
 
-Get needed NuGet packages from `bin/nuget` folder and put it in some folder in your solution, moddify/create `nuget.config` to contains 
+Get needed NuGet packages from `bin/nuget` folder and put it in some folder in your solution, modify/create `nuget.config` to contains 
 
 ```
 <?xml version="1.0" encoding="utf-8"?>
