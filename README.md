@@ -20,5 +20,6 @@ Get needed NuGet packages from `bin/nuget` folder and put it in some folder in y
     </packageSources>
 </configuration>
 ```
+More at the end of https://stackoverflow.com/questions/10240029/how-do-i-install-a-nuget-package-nupkg-file-locally
 
 In your solution go to NuGet manager, enable "prerelease" packages and select version with `...-?-custom` suffix.
