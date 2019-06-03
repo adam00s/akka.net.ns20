@@ -4,7 +4,7 @@ This is adaptation of https://github.com/akkadotnet/akka.net to work for project
 
 ## Build
 
-Build it just as normal akka.net
+Build it just as normal akka.net, but on master brunch (dev is not modified).
 
 ```
 .\build.ps1 Nuget
