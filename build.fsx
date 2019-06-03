@@ -152,7 +152,7 @@ Target "RunTestsNetCore" (fun _ ->
         let result = ExecProcess(fun info ->
             info.FileName <- "dotnet"
             info.WorkingDirectory <- (Directory.GetParent project).FullName
-            info.Arguments <- (sprintf "xunit -f netcoreapp1.1 -c Release -parallel none -teamcity -xml %s_xunit_netcore.xml" (outputTests @@ fileNameWithoutExt project))) (TimeSpan.FromMinutes 30.)
+            info.Arguments <- (sprintf "xunit -f netcoreapp2.2 -c Release -parallel none -teamcity -xml %s_xunit_netcore.xml" (outputTests @@ fileNameWithoutExt project))) (TimeSpan.FromMinutes 30.)
         
         ResultHandling.failBuildIfXUnitReportedError TestRunnerErrorLevel.DontFailBuild result
 
@@ -203,7 +203,7 @@ Target "MultiNodeTests" (fun _ ->
 
 Target "MultiNodeTestsNetCore" (fun _ ->
     ActivateFinalTarget "KillCreatedProcesses"
-    let multiNodeTestPath = findToolInSubPath "Akka.MultiNodeTestRunner.dll" (currentDirectory @@ "src" @@ "core" @@ "Akka.MultiNodeTestRunner" @@ "bin" @@ "Release" @@ "netcoreapp1.1" @@ "win7-x64" @@ "publish")
+    let multiNodeTestPath = findToolInSubPath "Akka.MultiNodeTestRunner.dll" (currentDirectory @@ "src" @@ "core" @@ "Akka.MultiNodeTestRunner" @@ "bin" @@ "Release" @@ "netcoreapp2.2" @@ "win7-x64" @@ "publish")
 
     let multiNodeTestAssemblies = 
         match getBuildParamOrDefault "incremental" "" with
@@ -351,7 +351,7 @@ Target "PublishMntr" (fun _ ->
                     Project = project
                     Configuration = configuration
                     Runtime = "win7-x64"
-                    Framework = "netcoreapp1.1"
+                    Framework = "netcoreapp2.2"
                     VersionSuffix = versionSuffix }))
 )
 

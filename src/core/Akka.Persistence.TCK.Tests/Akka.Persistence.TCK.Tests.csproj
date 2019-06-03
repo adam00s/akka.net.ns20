@@ -3,7 +3,7 @@
 
   <PropertyGroup>
     <AssemblyTitle>Akka.Persistence.TCK.Tests</AssemblyTitle>
-    <TargetFrameworks>net452;netcoreapp1.1</TargetFrameworks>
+    <TargetFrameworks>net452;netcoreapp2.2</TargetFrameworks>
   </PropertyGroup>
  
   <ItemGroup>
@@ -26,7 +26,7 @@
     <DefineConstants>$(DefineConstants);SERIALIZABLE</DefineConstants>
   </PropertyGroup>
 
-  <PropertyGroup Condition=" '$(TargetFramework)' == 'netcoreapp1.1' ">
+  <PropertyGroup Condition=" $([System.String]::Copy('$(TargetFramework)').Contains('netstandard')) OR $([System.String]::Copy('$(TargetFramework)').Contains('netcore')) ">
     <DefineConstants>$(DefineConstants);CORECLR</DefineConstants>
   </PropertyGroup>
 
